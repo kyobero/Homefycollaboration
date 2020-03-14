@@ -96,6 +96,9 @@
                         <a href="/landposts">post</a>
                         </li>
                         <li class="list-group-item">
+                        <a href="/posts">postindex</a>
+                        </li>
+                        <li class="list-group-item">
                         <a href="#">Land Search</a>
                         </li>
                         <li class="list-group-item">

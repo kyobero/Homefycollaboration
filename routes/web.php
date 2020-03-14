@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcomea');
 });
 
 Route::get('/about', function () {
@@ -73,5 +73,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('welcome', 'HomeController@index')->name('welcome');
 Route::resource('categoryregistration', 'CategoryregistrationsController');
 Route::resource('landposts', 'LandpostsController');
+
+Route::resource('posts', 'PostsController');
 
 
