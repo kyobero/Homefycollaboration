@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -7,24 +7,27 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Blockchain land registry') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ str_replace('_', ' ', config('app.name', 'Blockchain land registry')) }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -49,6 +52,12 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home') }}">{{ __('Dashboard') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('land.register') }}">{{ __('Register land') }}</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -73,71 +82,11 @@
         </nav>
 
         <main class="py-4">
-
-      
-
-    @auth
-    <div class="container">
-
-      <!-- Flash message/success -->
-      @if(session()->has('success'))
-        <div class="alert alert-success">
-        {{ session()->get('success')}}
-        </div>
-        @endif
-
-            <div class="row">
-                <div class="col-md-4">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                        <a >Overview</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="/landposts">post</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="/posts">postindex</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Land Search</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Properties</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Saved Properties</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="/categoryregistration">Title Registration</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="#">Resources</a>
-                        </li>
-                        <li class="list-group-item">
-                        <a href="https://vivianegwu.github.io/homefy/dashboard/index.html#">Proceed to dashboard</a>
-                        </li>
-                    </ul>
-                </div>
-
-
-
-                <div class="col-md-8">
-                @yield('content')
-            </div>
-            </div>
-            </div>
-    @else
-
-    @yield('content')
-
-    @endauth
-
-        </main> 
+            @yield('content')
+        </main>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"  crossorigin="anonymous"></script>
-    @yield('scripts')
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    @stack('scripts')
 </body>
 </html>

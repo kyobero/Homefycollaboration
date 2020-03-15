@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appk')
 
 @section('content')
 
@@ -11,6 +11,26 @@
     <div class="card-header"> Land posts</div>
 
         <div class="card-body">
+
+                <table class = "table">
+
+                <thead>
+
+                    <th>Image</th>
+
+                    <th>Title</th>
+
+                </thead>
+
+            </tbody>    
+
+                <tr></tr>
+
+            <
+
+
+        </div>
+        
 
     </div>
 

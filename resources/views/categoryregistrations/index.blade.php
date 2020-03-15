@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.appk')
 
 @section('content')
 
 
 <div class="d-flex justify-content-end mb-2">
-<a href="{{ route('categoryregistration.create')}}" class="btn btn-success float-right"> Add land title</a>
+<a href="{{ route('categoryregistration.create')}}" class="btn btn-success float-right"> Add land status</a>
 </div>
 
 

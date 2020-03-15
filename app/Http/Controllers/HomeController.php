@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Township;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->only(['registerLand']);
     }
 
     /**
@@ -23,6 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('homek');
+    }
+
+    public function registerLand()
+    {
+        $townShips = Township::all();
+        return view('land.register', compact('townShips'));
+    }
+
+    public function viewTrxChain()
+    {
+        return view('land.transactions');
     }
 }
