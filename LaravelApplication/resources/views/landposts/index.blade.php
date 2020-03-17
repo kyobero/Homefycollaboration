@@ -10,6 +10,8 @@
 
     <div class="card-header"> Land posts</div>
 
+
+
         <div class="card-body">
 
             <table class="table">
@@ -28,25 +30,23 @@
 
                 </thead>
 
-            </table>            
+            <!-- </table>             -->
 
          </tbody>
 
-            @foreach($landposts as $landpost)
+         @foreach($landposts as $landpost)
 
              <tr>
 
                   <td>
                       {{ $landpost->land_title}}
                   </td>
+
+                  <td>
+                   {{ $landpost->allocationNumber}}
+                  </td>
              
-             </tr>
-
-             <tr>
-
-             <td>
-                 {{ $landpost->allocationNumber}}
-             </td>
+             <!-- </tr> -->
 
              <td>
              
@@ -57,6 +57,24 @@
              <td>
              
              <a href="" class="btn btn-danger btn-sm">Trash</a>
+
+             </td>
+
+             <td>
+             
+             <!-- <a href="" class="btn btn-danger btn-sm">status</a> -->
+
+             </div>
+        <!-- <div class="form-group">
+        <label for ="Set_status">Set_status</label> -->
+                            <select  class="form-control"  id = "Set_status" name="Set_status" required="">
+                                <option disabled selected>set status</option>
+                                <option value="3">Approved with documentation</option>
+                                <option value="3">Approved with documentation pending</option>
+                                <option value="3">Not started</option>
+                            </select>
+                        <!-- </div> -->
+
 
              </td>
         

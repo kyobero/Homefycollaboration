@@ -99,22 +99,19 @@
                         <a href="/landposts">Landpost</a>
                         </li>
                         <li class="list-group-item">
-                        <a href="/posts">postindex</a>
-                        </li>
-                        <li class="list-group-item">
                         <a href="#">Properties</a>
                         </li>
                         <li class="list-group-item">
                         <a href="#">Saved Properties</a>
                         </li>
                         <li class="list-group-item">
-                        <a href="/categoryregistration">Land verification status</a>
+                        <a href="/categoryregistration">Verification status</a>
                         </li>
                         <li class="list-group-item">
                         <a href="#">Resources</a>
                         </li>
                         <li class="list-group-item">
-                        <a href="/blockchain">connect to blockchain</a>
+                        <a href="/blockchain">Main network</a>
                         </li>
 
                         <li class="list-group-item">
